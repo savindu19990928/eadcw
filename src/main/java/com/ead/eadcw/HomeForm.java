@@ -8,6 +8,7 @@ import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
@@ -38,6 +39,8 @@ public class HomeForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panel1 = new java.awt.Panel();
+        imgLabel = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         closeMenuItem = new javax.swing.JMenuItem();
@@ -53,8 +56,22 @@ public class HomeForm extends javax.swing.JFrame {
         settingsMenu = new javax.swing.JMenu();
         pChangeMenuItem = new javax.swing.JMenuItem();
 
+        javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
+        panel1.setLayout(panel1Layout);
+        panel1Layout.setHorizontalGroup(
+            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        panel1Layout.setVerticalGroup(
+            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Library Management System");
+
+        imgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/HomeIMG.png"))); // NOI18N
+        getContentPane().add(imgLabel, java.awt.BorderLayout.LINE_START);
 
         fileMenu.setText("File");
 
@@ -142,17 +159,6 @@ public class HomeForm extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
-        );
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -223,10 +229,12 @@ public class HomeForm extends javax.swing.JFrame {
     private javax.swing.JMenuItem fManageMenuItem;
     private javax.swing.JMenuItem fReportMenuItem;
     private javax.swing.JMenu fileMenu;
+    private javax.swing.JLabel imgLabel;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem mManageMenuItem;
     private javax.swing.JMenu membersMenu;
     private javax.swing.JMenuItem pChangeMenuItem;
+    private java.awt.Panel panel1;
     private javax.swing.JMenu reportMenu;
     private javax.swing.JMenu settingsMenu;
     // End of variables declaration//GEN-END:variables
