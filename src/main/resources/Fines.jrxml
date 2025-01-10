@@ -1,8 +1,9 @@
-<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
-<jasperReport name="Fines" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1559312f-56fd-4f4f-94fc-de61e12874eb">
-	<property name="com.jaspersoft.studio.data.sql.tables" value="ZWFkY3cuYEZpbmVzYCBBUyAsNTgsMzUsMmY2YzQzMDQtZjA1Yi00NjgxLTgzYWYtNDg2MjBhYzcy&#xa;ZWZmO2VhZGN3LmBCb3Jyb3dlZEJvb2tzYCBBUyAsMzAwLDUyLDUxYzY4MGIxLTk5NTUtNDNiYy1i&#xa;MjIyLWQzMzE5ZTA3YWRkNjtlYWRjdy5gTWVtYmVyc2AgQVMgLDE0OCwyODQsYjJkZTc5MzItOTEx&#xa;OS00NThmLTkyNjgtNjNlZGJiODVkOWU5Ow=="/>
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Fines" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1559312f-56fd-4f4f-94fc-de61e12874eb">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="ZWFkY3cuYEZpbmVzYCBBUyAsNTgsMzUsMmY2YzQzMDQtZjA1Yi00NjgxLTgzYWYtNDg2MjBhYzcy&#xA;ZWZmO2VhZGN3LmBCb3Jyb3dlZEJvb2tzYCBBUyAsMzAwLDUyLDUxYzY4MGIxLTk5NTUtNDNiYy1i&#xA;MjIyLWQzMzE5ZTA3YWRkNjtlYWRjdy5gTWVtYmVyc2AgQVMgLDE0OCwyODQsYjJkZTc5MzItOTEx&#xA;OS00NThmLTkyNjgtNjNlZGJiODVkOWU5Ow=="/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="EADcw"/>
-	<query language="SQL"><![CDATA[SELECT eadcw.`Fines`.`FineID`,
+	<queryString language="SQL">
+		<![CDATA[SELECT eadcw.`Fines`.`FineID`,
 	eadcw.`Fines`.`BorrowID`,
 	eadcw.`Fines`.`FineAmount`,
 	eadcw.`Fines`.`DateIssued`,
@@ -14,7 +15,8 @@ FROM eadcw.`Fines`
 	INNER JOIN eadcw.`BorrowedBooks` ON 
 	 eadcw.`Fines`.`BorrowID` = eadcw.`BorrowedBooks`.`BorrowID` 
 	INNER JOIN eadcw.`Members` ON 
-	 eadcw.`BorrowedBooks`.`MemberID` = eadcw.`Members`.`MemberID`]]></query>
+	 eadcw.`BorrowedBooks`.`MemberID` = eadcw.`Members`.`MemberID`]]>
+	</queryString>
 	<field name="FineID" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="FineID"/>
 		<property name="com.jaspersoft.studio.field.label" value="FineID"/>
@@ -56,60 +58,106 @@ FROM eadcw.`Fines`
 		<property name="com.jaspersoft.studio.field.tree.path" value="Members"/>
 	</field>
 	<group name="FineID">
-		<expression><![CDATA[$F{FineID}]]></expression>
+		<groupExpression><![CDATA[$F{FineID}]]></groupExpression>
 	</group>
-	<background splitType="Stretch"/>
-	<title height="79" splitType="Stretch">
-		<element kind="staticText" uuid="042340dd-e2ee-4627-8bb9-4ca298ab9ceb" x="161" y="2" width="240" height="55" fontSize="24.0" bold="true" underline="true" hTextAlign="Center" vTextAlign="Middle">
-			<text><![CDATA[Fine Report]]></text>
-		</element>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="161" y="2" width="240" height="55" uuid="042340dd-e2ee-4627-8bb9-4ca298ab9ceb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Fine Report]]></text>
+			</staticText>
+		</band>
 	</title>
-	<pageHeader height="2" splitType="Stretch"/>
-	<columnHeader height="31" splitType="Stretch">
-		<element kind="staticText" uuid="57272f26-1705-4403-9cca-e52fee532b65" x="0" y="0" width="50" height="22" hTextAlign="Center" vTextAlign="Middle">
-			<text><![CDATA[Fine ID]]></text>
-		</element>
-		<element kind="staticText" uuid="11ed739b-9aca-45a2-b2d3-d1d2a83c81ed" x="50" y="-1" width="60" height="24" hTextAlign="Center" vTextAlign="Middle">
-			<text><![CDATA[Member ID]]></text>
-		</element>
-		<element kind="staticText" uuid="8f680915-25f5-4f11-8c73-cb880a98e9b1" x="110" y="0" width="140" height="22" hTextAlign="Center" vTextAlign="Middle">
-			<text><![CDATA[Member Name]]></text>
-		</element>
-		<element kind="staticText" uuid="f0e867b9-63f9-4b52-a784-07ed72f16fc8" x="250" y="-1" width="150" height="22" hTextAlign="Center" vTextAlign="Middle">
-			<text><![CDATA[Reason]]></text>
-		</element>
-		<element kind="staticText" uuid="6d5d17cb-3b8e-406c-816e-f85edf3d502d" x="400" y="-1" width="100" height="24" hTextAlign="Center" vTextAlign="Middle">
-			<text><![CDATA[Issued Date]]></text>
-		</element>
-		<element kind="staticText" uuid="181bdab9-35be-41fb-b594-d5ac0d473bfc" x="500" y="0" width="54" height="20" hTextAlign="Center" vTextAlign="Middle">
-			<text><![CDATA[Paid]]></text>
-		</element>
-		<element kind="line" uuid="f3bb3c48-0c66-45a6-afb4-d2cde2d3608f" x="0" y="22" width="575" height="1"/>
+	<pageHeader>
+		<band height="2" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="50" height="22" uuid="57272f26-1705-4403-9cca-e52fee532b65"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Fine ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="-1" width="60" height="24" uuid="11ed739b-9aca-45a2-b2d3-d1d2a83c81ed"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Member ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="0" width="140" height="22" uuid="8f680915-25f5-4f11-8c73-cb880a98e9b1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Member Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="-1" width="150" height="22" uuid="f0e867b9-63f9-4b52-a784-07ed72f16fc8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Reason]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="-1" width="100" height="24" uuid="6d5d17cb-3b8e-406c-816e-f85edf3d502d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Issued Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="500" y="0" width="54" height="20" uuid="181bdab9-35be-41fb-b594-d5ac0d473bfc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Paid]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="22" width="575" height="1" uuid="f3bb3c48-0c66-45a6-afb4-d2cde2d3608f"/>
+			</line>
+		</band>
 	</columnHeader>
 	<detail>
 		<band height="39" splitType="Stretch">
-			<element kind="textField" uuid="bdf5721e-359b-4858-958c-25545f0b484f" x="0" y="5" width="50" height="20" hTextAlign="Center" vTextAlign="Middle">
-				<expression><![CDATA[$F{FineID}]]></expression>
-			</element>
-			<element kind="textField" uuid="43022c1d-4026-4f91-bd1e-749a22675e53" x="50" y="5" width="60" height="20" hTextAlign="Center" vTextAlign="Middle">
-				<expression><![CDATA[$F{MemberID}]]></expression>
-			</element>
-			<element kind="textField" uuid="a3367f59-710f-48bb-b6a0-84c844b34417" x="110" y="5" width="140" height="22" hTextAlign="Center" vTextAlign="Middle">
-				<expression><![CDATA[$F{FullName}]]></expression>
-			</element>
-			<element kind="textField" uuid="43c48158-5e6c-462e-ba65-194934b34694" x="250" y="5" width="150" height="22" hTextAlign="Center" vTextAlign="Middle">
-				<expression><![CDATA[$F{Reason}]]></expression>
-			</element>
-			<element kind="textField" uuid="c5a5b1fd-0392-4975-a0b2-771c63125e93" x="400" y="5" width="100" height="22" hTextAlign="Center" vTextAlign="Middle">
-				<expression><![CDATA[$F{DateIssued}]]></expression>
-			</element>
-			<element kind="textField" uuid="dbdbd3ae-7b6d-4d9d-8e4d-fb6001349034" x="500" y="5" width="54" height="20" hTextAlign="Center" vTextAlign="Middle">
-				<expression><![CDATA[(($F{DatePaid}) != null) ? "Yes" : "No"]]></expression>
-			</element>
-			<element kind="line" uuid="ed0417ee-81b9-41bf-807d-a71510e280b2" x="0" y="27" width="575" height="1"/>
+			<textField>
+				<reportElement x="0" y="5" width="50" height="20" uuid="bdf5721e-359b-4858-958c-25545f0b484f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{FineID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="5" width="60" height="20" uuid="43022c1d-4026-4f91-bd1e-749a22675e53"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{MemberID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="5" width="140" height="22" uuid="a3367f59-710f-48bb-b6a0-84c844b34417"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{FullName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="250" y="5" width="150" height="22" uuid="43c48158-5e6c-462e-ba65-194934b34694"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Reason}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="5" width="100" height="22" uuid="c5a5b1fd-0392-4975-a0b2-771c63125e93"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{DateIssued}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="500" y="5" width="54" height="20" uuid="dbdbd3ae-7b6d-4d9d-8e4d-fb6001349034"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[(($F{DatePaid}) != null) ? "Yes" : "No"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="27" width="575" height="1" uuid="ed0417ee-81b9-41bf-807d-a71510e280b2"/>
+			</line>
 		</band>
 	</detail>
-	<columnFooter height="45" splitType="Stretch"/>
-	<pageFooter height="54" splitType="Stretch"/>
-	<summary height="42" splitType="Stretch"/>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
 </jasperReport>
