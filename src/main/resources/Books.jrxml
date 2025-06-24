@@ -1,0 +1,79 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="Books" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5c66f514-1caf-4c22-b087-4a99f2f63d90">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="ZWFkY3cuYEJvb2tzYCBBUyAsODEsNDksZjMyN2VhNGUtZDZjNi00MmE0LTg4MDEtMWUwZDY5MGIy&#xa;ZmE5Ow=="/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.jrdax"/>
+	<query language="SQL"><![CDATA[SELECT `BookID`,
+	`Title`,
+	`Author`,
+	`Category`,
+	`BookID`,
+	`Title`,
+	`Author`,
+	`Category`
+FROM eadcw.`Books`]]></query>
+	<field name="BookID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="BookID"/>
+		<property name="com.jaspersoft.studio.field.label" value="BookID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Books"/>
+	</field>
+	<field name="Title" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Title"/>
+		<property name="com.jaspersoft.studio.field.label" value="Title"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Books"/>
+	</field>
+	<field name="Author" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Author"/>
+		<property name="com.jaspersoft.studio.field.label" value="Author"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Books"/>
+	</field>
+	<field name="Category" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Category"/>
+		<property name="com.jaspersoft.studio.field.label" value="Category"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Books"/>
+	</field>
+	<group name="BookID">
+		<expression><![CDATA[$F{BookID}]]></expression>
+	</group>
+	<background splitType="Stretch"/>
+	<title height="69" splitType="Stretch">
+		<element kind="staticText" uuid="26251093-9524-4e7e-8d9c-a9ca6a3825e4" x="157" y="12" width="240" height="55" fontSize="24.0" bold="true" underline="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Book Report]]></text>
+		</element>
+	</title>
+	<pageHeader splitType="Stretch"/>
+	<columnHeader height="46" splitType="Stretch">
+		<element kind="line" uuid="cbc2d979-ffff-4ccb-90b3-1d18a910b690" x="40" y="41" width="469" height="1"/>
+		<element kind="staticText" uuid="7fa9cc54-ebc6-4b65-82c9-8e4ce2092c1d" x="40" y="20" width="50" height="20" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Book ID]]></text>
+		</element>
+		<element kind="staticText" uuid="df03b966-d76a-42eb-a77b-2e538feac345" x="90" y="20" width="140" height="20" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Book Title]]></text>
+		</element>
+		<element kind="staticText" uuid="db587421-f76f-49c1-a114-ada6779ca0bc" x="230" y="20" width="140" height="20" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Category]]></text>
+		</element>
+		<element kind="staticText" uuid="03f11768-585f-4a10-ab05-c37f92fda148" x="370" y="20" width="140" height="20" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Author]]></text>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="35" splitType="Stretch">
+			<element kind="textField" uuid="7b57c721-d33c-4cc0-90f8-89318c29637d" x="40" y="10" width="50" height="18" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{BookID}]]></expression>
+			</element>
+			<element kind="textField" uuid="230a590a-13f6-4aa0-bbe1-6a7aafbd58f7" x="90" y="10" width="140" height="18" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{Title}]]></expression>
+			</element>
+			<element kind="textField" uuid="9f25fb36-ed67-4755-a9f2-6669defd6c80" x="230" y="10" width="140" height="18" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{Category}]]></expression>
+			</element>
+			<element kind="textField" uuid="9dc5bfcb-770d-4fd4-af6e-52788c19841e" x="370" y="10" width="140" height="18" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{Author}]]></expression>
+			</element>
+			<element kind="line" uuid="6ad2f4dc-ae6e-4234-b365-c793d5b8afe6" x="40" y="30" width="469" height="1"/>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>

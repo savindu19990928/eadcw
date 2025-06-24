@@ -1,0 +1,115 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="Fines" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1559312f-56fd-4f4f-94fc-de61e12874eb">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="ZWFkY3cuYEZpbmVzYCBBUyAsNTgsMzUsMmY2YzQzMDQtZjA1Yi00NjgxLTgzYWYtNDg2MjBhYzcy&#xa;ZWZmO2VhZGN3LmBCb3Jyb3dlZEJvb2tzYCBBUyAsMzAwLDUyLDUxYzY4MGIxLTk5NTUtNDNiYy1i&#xa;MjIyLWQzMzE5ZTA3YWRkNjtlYWRjdy5gTWVtYmVyc2AgQVMgLDE0OCwyODQsYjJkZTc5MzItOTEx&#xa;OS00NThmLTkyNjgtNjNlZGJiODVkOWU5Ow=="/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.jrdax"/>
+	<query language="SQL"><![CDATA[SELECT eadcw.`Fines`.`FineID`,
+	eadcw.`Fines`.`BorrowID`,
+	eadcw.`Fines`.`FineAmount`,
+	eadcw.`Fines`.`DateIssued`,
+	eadcw.`Fines`.`DatePaid`,
+	eadcw.`Fines`.`Reason`,
+	eadcw.`Members`.`MemberID`,
+	eadcw.`Members`.`FullName`
+FROM eadcw.`Fines`
+	INNER JOIN eadcw.`BorrowedBooks` ON 
+	 eadcw.`Fines`.`BorrowID` = eadcw.`BorrowedBooks`.`BorrowID` 
+	INNER JOIN eadcw.`Members` ON 
+	 eadcw.`BorrowedBooks`.`MemberID` = eadcw.`Members`.`MemberID`]]></query>
+	<field name="FineID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="FineID"/>
+		<property name="com.jaspersoft.studio.field.label" value="FineID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Fines"/>
+	</field>
+	<field name="BorrowID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="BorrowID"/>
+		<property name="com.jaspersoft.studio.field.label" value="BorrowID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Fines"/>
+	</field>
+	<field name="FineAmount" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="FineAmount"/>
+		<property name="com.jaspersoft.studio.field.label" value="FineAmount"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Fines"/>
+	</field>
+	<field name="DateIssued" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="DateIssued"/>
+		<property name="com.jaspersoft.studio.field.label" value="DateIssued"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Fines"/>
+	</field>
+	<field name="DatePaid" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="DatePaid"/>
+		<property name="com.jaspersoft.studio.field.label" value="DatePaid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Fines"/>
+	</field>
+	<field name="Reason" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Reason"/>
+		<property name="com.jaspersoft.studio.field.label" value="Reason"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Fines"/>
+	</field>
+	<field name="MemberID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="MemberID"/>
+		<property name="com.jaspersoft.studio.field.label" value="MemberID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Members"/>
+	</field>
+	<field name="FullName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="FullName"/>
+		<property name="com.jaspersoft.studio.field.label" value="FullName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="Members"/>
+	</field>
+	<group name="FineID">
+		<expression><![CDATA[$F{FineID}]]></expression>
+	</group>
+	<background splitType="Stretch"/>
+	<title height="79" splitType="Stretch">
+		<element kind="staticText" uuid="042340dd-e2ee-4627-8bb9-4ca298ab9ceb" x="161" y="2" width="240" height="55" fontSize="24.0" bold="true" underline="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Fine Report]]></text>
+		</element>
+	</title>
+	<pageHeader height="2" splitType="Stretch"/>
+	<columnHeader height="31" splitType="Stretch">
+		<element kind="staticText" uuid="57272f26-1705-4403-9cca-e52fee532b65" x="0" y="0" width="50" height="22" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Fine ID]]></text>
+		</element>
+		<element kind="staticText" uuid="11ed739b-9aca-45a2-b2d3-d1d2a83c81ed" x="50" y="-1" width="60" height="24" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Member ID]]></text>
+		</element>
+		<element kind="staticText" uuid="8f680915-25f5-4f11-8c73-cb880a98e9b1" x="110" y="0" width="140" height="22" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Member Name]]></text>
+		</element>
+		<element kind="staticText" uuid="f0e867b9-63f9-4b52-a784-07ed72f16fc8" x="250" y="-1" width="150" height="22" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Reason]]></text>
+		</element>
+		<element kind="staticText" uuid="6d5d17cb-3b8e-406c-816e-f85edf3d502d" x="400" y="-1" width="100" height="24" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Issued Date]]></text>
+		</element>
+		<element kind="staticText" uuid="181bdab9-35be-41fb-b594-d5ac0d473bfc" x="500" y="0" width="54" height="20" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Paid]]></text>
+		</element>
+		<element kind="line" uuid="f3bb3c48-0c66-45a6-afb4-d2cde2d3608f" x="0" y="22" width="575" height="1"/>
+	</columnHeader>
+	<detail>
+		<band height="39" splitType="Stretch">
+			<element kind="textField" uuid="bdf5721e-359b-4858-958c-25545f0b484f" x="0" y="5" width="50" height="20" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{FineID}]]></expression>
+			</element>
+			<element kind="textField" uuid="43022c1d-4026-4f91-bd1e-749a22675e53" x="50" y="5" width="60" height="20" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{MemberID}]]></expression>
+			</element>
+			<element kind="textField" uuid="a3367f59-710f-48bb-b6a0-84c844b34417" x="110" y="5" width="140" height="22" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{FullName}]]></expression>
+			</element>
+			<element kind="textField" uuid="43c48158-5e6c-462e-ba65-194934b34694" x="250" y="5" width="150" height="22" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{Reason}]]></expression>
+			</element>
+			<element kind="textField" uuid="c5a5b1fd-0392-4975-a0b2-771c63125e93" x="400" y="5" width="100" height="22" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{DateIssued}]]></expression>
+			</element>
+			<element kind="textField" uuid="dbdbd3ae-7b6d-4d9d-8e4d-fb6001349034" x="500" y="5" width="54" height="20" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[(($F{DatePaid}) != null) ? "Yes" : "No"]]></expression>
+			</element>
+			<element kind="line" uuid="ed0417ee-81b9-41bf-807d-a71510e280b2" x="0" y="27" width="575" height="1"/>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>
