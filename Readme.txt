@@ -6,3 +6,5 @@ Database Username = savindu
 Database password = savindu
 
 Java version - JDK 23
+
+USE eadcw.sql First
